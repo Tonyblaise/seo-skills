@@ -1,8 +1,10 @@
 # seo-skills — Marketing Skills for AI Agents
 
+> **Attribution notice**: This repository was compiled by **Tony Ashiuma** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills). Full credit goes to **[Corey Haines](https://corey.co?ref=marketingskills)** for the original work. This copy is used for personal learning and experimentation under the MIT License.
+
 A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
-Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
+Originally built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
 
 New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
 
@@ -16,36 +18,34 @@ Skills are markdown files that give AI agents specialized knowledge and workflow
 
 ## How Skills Work Together
 
-Skills reference each other and build on shared context. The `product-marketing` skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
+Skills reference each other and build on shared context. `content-strategy` acts as the planning foundation — other skills pull from it to align on topics, audience, and goals.
 
 ```
-                            ┌──────────────────────────────────────┐
-                            │          product-marketing           │
-                            │    (read by all other skills first)  │
-                            └──────────────────┬───────────────────┘
-                                               │
-    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
-    ▼              ▼             ▼             ▼             ▼              ▼              ▼
-┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
-│  SEO &   │ │   CRO    │ │Content & │ │  Paid &    │ │ Growth & │ │  Sales &    │ │ Strategy  │
-│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
-├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
-│seo-audit │ │cro       │ │copywritng│ │ads         │ │referrals │ │revops       │ │mktg-ideas │
-│ai-seo    │ │signup    │ │copy-edit │ │ad-creative │ │free-tools│ │sales-enable │ │mktg-psych │
-│site-arch │ │onboarding│ │cold-email│ │ab-testing  │ │churn-    │ │launch       │ │customer-  │
-│programm  │ │popups    │ │emails    │ │analytics   │ │ prevent  │ │pricing      │ │ research  │
-│schema    │ │paywalls  │ │social    │ │            │ │community │ │competitors  │ │           │
-│content   │ │          │ │video     │ │            │ │lead-magnt│ │comp-profile │ │           │
-│aso       │ │          │ │image     │ │            │ │co-mktg   │ │directory    │ │           │
-└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
-     │            │            │              │             │              │              │
-     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
-                        │
+                    ┌──────────────────────────────────────┐
+                    │          content-strategy            │
+                    │    (foundation for content work)     │
+                    └──────────────────┬───────────────────┘
+                                       │
+    ┌──────────────┬────────────────────┼──────────────┬──────────────┐
+    ▼              ▼                    ▼              ▼              ▼
+┌──────────┐ ┌──────────┐        ┌──────────┐  ┌────────────┐ ┌───────────┐
+│  SEO &   │ │   CRO    │        │Content & │  │Competitor  │ │ Strategy  │
+│Discovery │ │          │        │   Copy   │  │Intelligence│ │           │
+├──────────┤ ├──────────┤        ├──────────┤  ├────────────┤ ├───────────┤
+│seo-audit │ │cro       │        │copywritng│  │competitor- │ │launch     │
+│ai-seo    │ │          │        │copy-edit │  │ analysis   │ │           │
+│site-arch │ │          │        │image     │  │competitor- │ │           │
+│programm  │ │          │        │          │  │ profiling  │ │           │
+│schema    │ │          │        │          │  │            │ │           │
+└────┬─────┘ └────┬─────┘        └────┬─────┘  └─────┬──────┘ └─────┬─────┘
+     │            │                   │               │              │
+     └────────────┴──────────┬────────┴───────────────┴──────────────┘
+                             │
          Skills cross-reference each other:
-           copywriting ↔ cro ↔ ab-testing
-           revops ↔ sales-enablement ↔ cold-email
+           copywriting ↔ cro
            seo-audit ↔ schema ↔ ai-seo
-           customer-research → copywriting, cro, competitors
+           competitor-analysis ↔ competitor-profiling
+           content-strategy → copywriting, seo-audit
 ```
 
 See each skill's **Related Skills** section for the full dependency map.
@@ -55,46 +55,19 @@ See each skill's **Related Skills** section for the full dependency map.
 <!-- SKILLS:START -->
 | Skill | Description |
 |-------|-------------|
-| [ab-testing](skills/ab-testing/) | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
-| [ad-creative](skills/ad-creative/) | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
-| [ads](skills/ads/) | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
 | [ai-seo](skills/ai-seo/) | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
-| [analytics](skills/analytics/) | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
-| [aso](skills/aso/) | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions 'ASO... |
-| [churn-prevention](skills/churn-prevention/) | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
-| [co-marketing](skills/co-marketing/) | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Use... |
-| [cold-email](skills/cold-email/) | Write B2B cold emails and follow-up sequences that get replies. Use when the user wants to write cold outreach emails,... |
-| [community-marketing](skills/community-marketing/) | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
+| [competitor-analysis](skills/competitor-analysis/) | When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when... |
 | [competitor-profiling](skills/competitor-profiling/) | When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions... |
-| [competitors](skills/competitors/) | When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when... |
 | [content-strategy](skills/content-strategy/) | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
 | [copy-editing](skills/copy-editing/) | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
 | [copywriting](skills/copywriting/) | When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages,... |
 | [cro](skills/cro/) | When the user wants to optimize, improve, or increase conversions on any marketing page or form — including homepage,... |
-| [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions "customer... |
-| [directory-submissions](skills/directory-submissions/) | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for... |
-| [emails](skills/emails/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
-| [free-tools](skills/free-tools/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
 | [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
 | [launch](skills/launch/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
-| [lead-magnets](skills/lead-magnets/) | When the user wants to create, plan, or optimize a lead magnet for email capture or lead generation. Also use when the... |
-| [marketing-ideas](skills/marketing-ideas/) | When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the... |
-| [marketing-psychology](skills/marketing-psychology/) | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when... |
-| [onboarding](skills/onboarding/) | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also... |
-| [paywalls](skills/paywalls/) | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use... |
-| [popups](skills/popups/) | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also... |
-| [pricing](skills/pricing/) | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions... |
-| [product-marketing](skills/product-marketing/) | When the user wants to create or update their product marketing context document. Also use when the user mentions... |
 | [programmatic-seo](skills/programmatic-seo/) | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions... |
-| [referrals](skills/referrals/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
-| [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
-| [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
 | [schema](skills/schema/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
 | [seo-audit](skills/seo-audit/) | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO... |
-| [signup](skills/signup/) | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the... |
 | [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal... |
-| [social](skills/social/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
-| [video](skills/video/) | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use... |
 <!-- SKILLS:END -->
 
 ## Installation
@@ -233,72 +206,50 @@ Once installed, just ask your agent to help with marketing tasks:
 "Write homepage copy for my SaaS"
 → Uses copywriting skill
 
-"Set up GA4 tracking for signups"
-→ Uses analytics skill
+"Audit the SEO on my site"
+→ Uses seo-audit skill
 
-"Create a 5-email welcome sequence"
-→ Uses emails skill
+"Plan what content to create this quarter"
+→ Uses content-strategy skill
+
+"Research my top competitor"
+→ Uses competitor-profiling skill
 ```
 
 You can also invoke skills directly:
 
 ```
 /cro
-/emails
 /seo-audit
+/copywriting
+/content-strategy
+/ai-seo
 ```
 
 ## Skill Categories
-
-### Conversion Optimization
-- `cro` - Pages and forms
-- `signup` - Registration flows
-- `onboarding` - Post-signup activation
-- `popups` - Modals and overlays
-- `paywalls` - In-app upgrade moments
-
-### Content & Copy
-- `copywriting` - Marketing page copy
-- `copy-editing` - Edit and polish existing copy
-- `cold-email` - B2B cold outreach emails and sequences
-- `emails` - Automated email flows
-- `social` - Social media content
-- `image` - AI image generation, design tools, and optimization
 
 ### SEO & Discovery
 - `seo-audit` - Technical and on-page SEO
 - `ai-seo` - AI search optimization (AEO, GEO, LLMO)
 - `programmatic-seo` - Scaled page generation
 - `site-architecture` - Page hierarchy, navigation, URL structure
-- `competitors` - Comparison and alternative pages
 - `schema` - Structured data
 
-### Paid & Distribution
-- `ads` - Google, Meta, LinkedIn ad campaigns
-- `ad-creative` - Bulk ad creative generation and iteration
-- `social` - Social media scheduling and strategy
+### Content & Copy
+- `content-strategy` - Content planning and topic selection
+- `copywriting` - Marketing page copy
+- `copy-editing` - Edit and polish existing copy
+- `image` - AI image generation, design tools, and optimization
 
-### Measurement & Testing
-- `analytics` - Event tracking setup
-- `ab-testing` - Experiment design
+### Conversion Optimization
+- `cro` - Pages and forms
 
-### Retention
-- `churn-prevention` - Cancel flows, save offers, dunning, payment recovery
+### Competitor Intelligence
+- `competitor-analysis` - Comparison and alternative pages for SEO and sales
+- `competitor-profiling` - Research and profile competitors from their URLs
 
-### Growth Engineering
-- `co-marketing` - Partner identification and joint campaigns
-- `free-tools` - Marketing tools and calculators
-- `referrals` - Referral and affiliate programs
-
-### Strategy & Monetization
-- `marketing-ideas` - 140 SaaS marketing ideas
-- `marketing-psychology` - Mental models and psychology
+### Strategy
 - `launch` - Product launches and announcements
-- `pricing` - Pricing, packaging, and monetization
-
-### Sales & RevOps
-- `revops` - Lead lifecycle, scoring, routing, pipeline management
-- `sales-enablement` - Sales decks, one-pagers, objection docs, demo scripts
 
 ## Contributing
 
