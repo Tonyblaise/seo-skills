@@ -1,6 +1,6 @@
 # seo-skills — Marketing Skills for AI Agents
 
-> **Attribution notice**: This repository was compiled by **Tony Ashiuma** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills). Full credit goes to **[Corey Haines](https://corey.co?ref=marketingskills)** for the original work. This copy is used for personal learning and experimentation under the MIT License.
+> **Attribution notice**: This repository was compiled by **Tony Blaise** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills). Full credit goes to **[Corey Haines](https://corey.co?ref=marketingskills)** for the original work. This copy is used for personal learning and experimentation under the MIT License.
 
 A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 

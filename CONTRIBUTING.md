@@ -1,6 +1,6 @@
 # Contributing
 
-> **Attribution notice**: This repository was authored by **Tony Ashiuma** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) by **Corey Haines**. Full credit goes to Corey Haines for the original work. This copy is used for personal learning and experimentation under the MIT License.
+> **Attribution notice**: This repository was authored by **Tony Blaise** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) by **Corey Haines**. Full credit goes to Corey Haines for the original work. This copy is used for personal learning and experimentation under the MIT License.
 
 Thanks for your interest in contributing to Marketing Skills! This guide will help you add new skills or improve existing ones.
 
