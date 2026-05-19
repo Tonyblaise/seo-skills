@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull *)",
+      "Bash(grep *)",
+      "Bash(git add *)",
+      "Bash(git rebase *)",
+      "Bash(git push *)",
+      "Bash(git -C /Users/tony.ashiuma/Desktop/reactApp/seo-skills/marketingskills add README.md CONTRIBUTING.md)",
+      "Bash(git -C /Users/tony.ashiuma/Desktop/reactApp/seo-skills/marketingskills commit -m ' *)",
+      "Bash(git -C /Users/tony.ashiuma/Desktop/reactApp/seo-skills/marketingskills push origin main)"
+    ]
+  }
+}

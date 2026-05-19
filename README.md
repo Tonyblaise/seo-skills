@@ -2,6 +2,8 @@
 
 > **Attribution notice**: This repository was compiled by **Tony Blaise** and is based on content extracted and adapted from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills). Full credit goes to **[Corey Haines](https://corey.co?ref=marketingskills)** for the original work. This copy is used for personal learning and experimentation under the MIT License.
 
+
+
 A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
 Originally built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
